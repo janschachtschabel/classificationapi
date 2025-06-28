@@ -1,13 +1,15 @@
-# Vercel entry point for FastAPI - Self-contained version
+# Vercel serverless function entry point
 import os
 import sys
 
-# Add src directory to Python path
-sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+# Add paths for imports
+current_dir = os.path.dirname(__file__)
+parent_dir = os.path.join(current_dir, '..')
+src_dir = os.path.join(parent_dir, 'src')
 
-# Add current directory to Python path for imports
-sys.path.insert(0, os.path.dirname(__file__))
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, current_dir)
+sys.path.insert(0, parent_dir)
+sys.path.insert(0, src_dir)
 
 try:
     from fastapi import FastAPI, HTTPException
@@ -103,16 +105,8 @@ try:
         from mangum import Mangum
         handler = Mangum(app, lifespan="off")
     except ImportError:
-        # Fallback handler without Mangum
-        def handler(event, context):
-            return {
-                "statusCode": 200,
-                "headers": {"Content-Type": "application/json"},
-                "body": json.dumps({
-                    "message": "API running but Mangum not available",
-                    "status": "limited_functionality"
-                })
-            }
+        # Fallback: export app directly for Vercel
+        handler = app
 
 except Exception as e:
     # Ultimate fallback
@@ -125,3 +119,6 @@ except Exception as e:
                 "status": "error"
             })
         }
+
+# Export both for compatibility
+app_instance = handler if 'app' in locals() else None
