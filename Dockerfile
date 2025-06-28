@@ -27,6 +27,8 @@ RUN uv sync --frozen --no-dev
 # Copy source code and configuration
 COPY src/ ./src/
 COPY evaluation_criteria/ ./evaluation_criteria/
+
+# Copy environment template (will be overridden by mounted .env in production)
 COPY .env.example .env
 
 # Create non-root user

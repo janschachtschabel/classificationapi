@@ -1,0 +1,27 @@
+# Docker Compose override for local development
+# This file is automatically loaded by docker-compose and overrides settings in docker-compose.yml
+
+version: '3.8'
+
+services:
+  classificationapi:
+    # Enable development mode
+    environment:
+      - API_DEBUG=true
+      - API_RELOAD=true
+      - LOG_LEVEL=DEBUG
+    
+    # Mount source code for live reloading during development
+    volumes:
+      - ./src:/app/src:ro
+      - ./evaluation_criteria:/app/evaluation_criteria:ro
+      - ./.env:/app/.env:ro
+      - ./logs:/app/logs
+    
+    # Override command for development with auto-reload
+    command: ["uv", "run", "uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    
+    # Expose additional ports for debugging if needed
+    # ports:
+    #   - "8000:8000"
+    #   - "5678:5678"  # For debugpy if needed

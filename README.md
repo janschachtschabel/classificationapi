@@ -127,10 +127,46 @@ The API will be available at `http://localhost:8000`.
 
 ### Docker
 
+#### Quick Start with Docker Compose
+
 ```bash
-# Build and run with Docker
+# Set your OpenAI API key
+export OPENAI_API_KEY="your_openai_api_key_here"
+
+# Start the service
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop the service
+docker-compose down
+```
+
+#### Manual Docker Build
+
+```bash
+# Build the image
 docker build -t classificationapi .
+
+# Run with environment file
 docker run -p 8000:8000 --env-file .env classificationapi
+
+# Or run with environment variables
+docker run -p 8000:8000 \
+  -e OPENAI_API_KEY="your_key_here" \
+  -e OPENAI_DEFAULT_MODEL="gpt-4o-mini" \
+  classificationapi
+```
+
+#### Development with Docker
+
+```bash
+# Start in development mode (with auto-reload)
+docker-compose -f docker-compose.yml -f docker-compose.override.yml up
+
+# Or use the shorthand (override is loaded automatically)
+docker-compose up
 ```
 
 ## 🔧 Configuration
@@ -139,7 +175,7 @@ Key environment variables in `.env`:
 
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
-OPENAI_DEFAULT_MODEL=gpt-4.1-mini
+OPENAI_DEFAULT_MODEL=gpt-4o-mini
 API_PORT=8000
 LOG_LEVEL=INFO
 ```
@@ -148,9 +184,100 @@ See [Configuration Guide](docs/getting-started/configuration.md) for all options
 
 ## 📖 Usage
 
-### Quick Start Examples
+### 🔗 API Endpoints
 
-#### SKOS Classification
+The API provides several endpoints for different types of content analysis:
+
+### `/classify` - Unified Classification Endpoint
+
+The main endpoint supporting multiple processing modes that can be combined:
+
+#### **Classification Modes:**
+- **`"skos"`** - Classify using SKOS vocabularies (OpenEduHub, custom vocabularies)
+- **`"custom"`** - Classify using custom categories defined in the request
+
+#### **Additional Processing Options:**
+- **`generate_descriptive_fields: true`** - Generate title, description, keywords
+- **`resource_suggestion: true`** - Generate educational resource suggestions
+- **`vocabulary_sources: []`** - Specify custom SKOS vocabularies or use defaults
+
+#### **Request Parameters:**
+```json
+{
+  "text": "Your content to analyze",
+  "mode": "skos|custom",
+  "vocabulary_sources": ["url1", "url2"],  // Optional, defaults to OpenEduHub
+  "custom_categories": {                     // Required for custom mode
+    "Subject": ["Math", "Science"],
+    "Level": ["Beginner", "Advanced"]
+  },
+  "generate_descriptive_fields": true,       // Optional, default: false
+  "resource_suggestion": true                // Optional, default: false
+}
+```
+
+### `/scoring/evaluate` - Text Quality Evaluation
+
+Evaluate text quality using predefined or custom metrics:
+
+#### **Available Predefined Metrics:**
+- `sachrichtigkeit` - Factual accuracy (5-point scale)
+- `neutralitaet` - Neutrality and objectivity (4-point scale)
+- `aktualitaet` - Timeliness and currency (5-point scale)
+- `didaktik_methodik` - Pedagogical quality (5-point scale)
+- `sprachliche_verstaendlichkeit` - Linguistic comprehensibility (5-point scale)
+
+#### **Request Parameters:**
+```json
+{
+  "text": "Content to evaluate",
+  "predefined_metrics": ["sachrichtigkeit", "neutralitaet"],  // Optional
+  "custom_metrics": [                                          // Optional
+    {
+      "name": "Custom Metric",
+      "description": "Evaluate specific aspect",
+      "scale": {
+        "type": "likert_5",
+        "min": 1,
+        "max": 5
+      },
+      "criteria": [
+        {
+          "name": "Criterion 1",
+          "description": "Detailed description",
+          "weight": 2.0
+        }
+      ]
+    }
+  ],
+  "include_improvements": false                               // Optional, default: false
+}
+```
+
+### `/scoring/metrics` - Available Metrics
+
+Retrieve list of all available predefined evaluation metrics:
+
+```bash
+GET /scoring/metrics
+```
+
+### `/health` - Health Check
+
+Simple health check endpoint:
+
+```bash
+GET /health
+```
+
+### **Interactive Documentation**
+
+- **Swagger UI**: `http://localhost:8000/docs` - Interactive API testing
+- **ReDoc**: `http://localhost:8000/redoc` - Clean API documentation
+
+## 🚀 Usage Examples
+
+### Basic Classification
 
 Classify text using SKOS vocabularies:
 

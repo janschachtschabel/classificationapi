@@ -148,3 +148,42 @@ cython_debug/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Project-specific
+# Logs directory
+logs/
+*.log
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Cache directories
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Environment files (keep .env.example)
+.env
+.env.local
+.env.*.local
+
+# Docker override for local development
+# docker-compose.override.yml  # Uncomment if you want to ignore local overrides
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
