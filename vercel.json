@@ -3,7 +3,11 @@
   "builds": [
     {
       "src": "api/index.py",
-      "use": "@vercel/python@4.1.0"
+      "use": "@vercel/python@4.1.0",
+      "config": {
+        "runtime": "python3.12",
+        "maxLambdaSize": "50mb"
+      }
     }
   ],
   "routes": [
@@ -16,6 +20,7 @@
     "OPENAI_DEFAULT_MODEL": "gpt-4o-mini",
     "API_HOST": "0.0.0.0",
     "LOG_LEVEL": "INFO",
-    "LOG_FORMAT": "json"
+    "LOG_FORMAT": "json",
+    "PYTHONPATH": "."
   }
 }
