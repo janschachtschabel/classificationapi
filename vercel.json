@@ -21,10 +21,5 @@
     "API_HOST": "0.0.0.0",
     "LOG_LEVEL": "INFO",
     "LOG_FORMAT": "json"
-  },
-  "functions": {
-    "src/main.py": {
-      "maxDuration": 60
-    }
   }
 }
