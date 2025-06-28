@@ -1,4 +1,4 @@
-# Vercel entry point for FastAPI
+# Vercel entry point for FastAPI - Self-contained version
 import sys
 import os
 
@@ -6,32 +6,49 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 try:
-    # Import serverless-optimized app
-    from app import app
-    from mangum import Mangum
+    # Try to import FastAPI and create a minimal app
+    from fastapi import FastAPI
+    from fastapi.middleware.cors import CORSMiddleware
     
-    # Use Mangum to adapt ASGI app for serverless
-    handler = Mangum(app, lifespan="off")
+    # Create minimal FastAPI app
+    app = FastAPI(
+        title="Metadata Classification API",
+        description="AI-powered metadata classification API",
+        version="1.0.0"
+    )
     
-except ImportError as e:
-    print(f"Import error: {e}")
-    # Fallback without Mangum
+    # Add CORS
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+    
+    # Basic health endpoint
+    @app.get("/")
+    async def root():
+        return {"message": "Metadata Classification API", "status": "running"}
+    
+    @app.get("/health")
+    async def health():
+        return {"status": "healthy"}
+    
+    # Try to use Mangum if available
     try:
-        from app import app
+        from mangum import Mangum
+        handler = Mangum(app, lifespan="off")
+    except ImportError:
+        # Direct FastAPI export for Vercel
         handler = app
-    except Exception as e2:
-        print(f"Fallback import error: {e2}")
-        def handler(event, context):
-            return {
-                'statusCode': 500,
-                'headers': {'Content-Type': 'application/json'},
-                'body': '{"error": "Failed to import FastAPI app"}'
-            }
-except Exception as e:
-    print(f"General error: {e}")
-    def handler(event, context):
+        
+except ImportError as e:
+    print(f"FastAPI import failed: {e}")
+    # Create basic HTTP handler
+    def handler(request):
         return {
             'statusCode': 500,
             'headers': {'Content-Type': 'application/json'},
-            'body': f'{{"error": "{str(e)}"}}'  
+            'body': f'{{"error": "FastAPI not available: {str(e)}", "requirements": "Check requirements.txt"}}'
         }
