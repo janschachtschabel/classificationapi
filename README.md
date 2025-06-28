@@ -169,6 +169,33 @@ docker-compose -f docker-compose.yml -f docker-compose.override.yml up
 docker-compose up
 ```
 
+## 🚀 Deployment
+
+### Render.com (Recommended)
+
+For production deployment, we recommend Render.com which provides excellent support for Docker-based Python applications:
+
+1. **Push your code to GitHub**
+2. **Connect to Render.com**
+   - Sign up at [render.com](https://render.com)
+   - Connect your GitHub account
+3. **Deploy from Blueprint**
+   - Click "New" → "Blueprint"
+   - Select your repository
+   - Render will detect the `render.yaml` configuration
+4. **Set Environment Variables**
+   - Add your `OPENAI_API_KEY` in the Render dashboard
+   - Other variables are pre-configured in `render.yaml`
+
+📖 **Detailed Guide**: See [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) for complete instructions.
+
+**Features on Render.com:**
+- ✅ Full application functionality (no serverless limitations)
+- ✅ Docker containerization
+- ✅ Automatic health checks
+- ✅ Free tier available
+- ✅ European data center (Frankfurt)
+
 ## 🔧 Configuration
 
 Key environment variables in `.env`:
@@ -434,6 +461,38 @@ focus_type = result['resource_suggestion_fields']['focus_type']
 | `/classify` | POST | Unified endpoint for classification, metadata generation, and resource suggestions |
 | `/scoring/evaluate` | POST | Text quality evaluation with predefined or custom metrics |
 | `/scoring/metrics` | GET | List available predefined evaluation metrics |
+
+## 🚀 Deployment
+
+This API is ready for production deployment on various cloud platforms:
+
+### Quick Deploy Options:
+
+**🛤️ Railway (Recommended)**
+```bash
+npm install -g @railway/cli
+railway login
+railway link
+railway up
+```
+
+**🎨 Render**
+- Connect GitHub repository at [render.com](https://render.com)
+- Select "Web Service" → "Docker"
+- Set `OPENAI_API_KEY` environment variable
+
+**☁️ Google Cloud Run**
+```bash
+gcloud builds submit --tag gcr.io/PROJECT_ID/classification-api
+gcloud run deploy --image gcr.io/PROJECT_ID/classification-api
+```
+
+**🐳 Self-Hosted**
+```bash
+docker-compose up -d
+```
+
+📋 **See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.**
 
 ## 🧪 Testing
 
