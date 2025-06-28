@@ -1,16 +1,21 @@
 {
-  "functions": {
-    "api/index.py": {
-      "runtime": "python3.11",
-      "maxDuration": 30
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python@4.1.0"
     }
-  },
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.py"
+    }
+  ],
   "env": {
     "OPENAI_DEFAULT_MODEL": "gpt-4o-mini",
     "API_HOST": "0.0.0.0",
     "LOG_LEVEL": "INFO",
     "LOG_FORMAT": "json"
-  },
-  "installCommand": "pip install -r requirements.txt",
-  "buildCommand": "echo 'No build needed'"
+  }
 }
