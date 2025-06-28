@@ -1,0 +1,213 @@
+evaluation_criteria:
+  name: "Didaktik und Methodik"
+  description: "Bewertung der didaktischen Qualität und methodischen Vielfalt von Bildungsinhalten"
+  scale: 
+    min: 1
+    max: 5
+    type: "likert_5"
+    labels:
+      "1": "Stimme überhaupt nicht zu"
+      "2": "Stimme eher nicht zu"
+      "3": "Neutral/Teils-teils"
+      "4": "Stimme eher zu"
+      "5": "Stimme voll und ganz zu"
+  criteria:
+    - name: "Lernzielklarheit"
+      description: |
+        Sind die Lernziele klar und verständlich formuliert?
+        1 Punkt: Keine erkennbaren oder sehr unklare Lernziele
+        2 Punkte: Lernziele vorhanden, aber schwer verständlich
+        3 Punkte: Lernziele teilweise klar, teilweise unklar
+        4 Punkte: Lernziele überwiegend klar und verständlich
+        5 Punkte: Lernziele vollständig klar, präzise und verständlich formuliert
+      weight: 2.5
+
+    - name: "Didaktisches Gesamtkonzept"
+      description: |
+        Gibt es ein erkennbares didaktisches Gesamtkonzept?
+        1 Punkt: Kein erkennbares didaktisches Konzept
+        2 Punkte: Ansätze eines Konzepts, aber unvollständig
+        3 Punkte: Grundlegendes Konzept erkennbar, aber nicht durchgängig
+        4 Punkte: Klares didaktisches Konzept, überwiegend umgesetzt
+        5 Punkte: Vollständig durchdachtes und konsequent umgesetztes didaktisches Konzept
+      weight: 2.5
+
+    - name: "Struktureller Aufbau"
+      description: |
+        Ist der Aufbau des Materials logisch und nachvollziehbar strukturiert?
+        1 Punkt: Unlogischer oder chaotischer Aufbau
+        2 Punkte: Teilweise logischer Aufbau, aber Sprünge erkennbar
+        3 Punkte: Grundsätzlich logisch, aber einige Unstimmigkeiten
+        4 Punkte: Überwiegend logisch und nachvollziehbar strukturiert
+        5 Punkte: Vollständig logisch, klar strukturiert und nachvollziehbar
+      weight: 2.0
+
+    - name: "Methodische Vielfalt"
+      description: |
+        Werden verschiedene methodische Zugänge für unterschiedliche Lerntypen angeboten?
+        1 Punkt: Nur eine Methode, keine Berücksichtigung verschiedener Lerntypen
+        2 Punkte: Wenige methodische Ansätze, begrenzte Lerntypenberücksichtigung
+        3 Punkte: Einige verschiedene Methoden, teilweise lerntypengerecht
+        4 Punkte: Gute methodische Vielfalt für verschiedene Lerntypen
+        5 Punkte: Umfassende methodische Vielfalt, alle Lerntypen berücksichtigt
+      weight: 2.5
+
+    - name: "Aktivierende Elemente"
+      description: |
+        Enthält das Material aktivierende Elemente (z.B. Aufgaben, Diskussionen, Projekte)?
+        1 Punkt: Keine aktivierenden Elemente, rein passiver Konsum
+        2 Punkte: Vereinzelte aktivierende Elemente
+        3 Punkte: Einige aktivierende Elemente, aber nicht durchgängig
+        4 Punkte: Regelmäßige und vielfältige aktivierende Elemente
+        5 Punkte: Durchgehend aktivierende Gestaltung mit vielfältigen Elementen
+      weight: 2.0
+
+    - name: "Selbstreflexion"
+      description: |
+        Gibt es Möglichkeiten zur Selbstreflexion oder Selbstüberprüfung für Lernende?
+        1 Punkt: Keine Selbstreflexions- oder Selbstüberprüfungsmöglichkeiten
+        2 Punkte: Vereinzelte, oberflächliche Reflexionsanregungen
+        3 Punkte: Einige Möglichkeiten zur Selbstreflexion vorhanden
+        4 Punkte: Regelmäßige und strukturierte Selbstreflexionsmöglichkeiten
+        5 Punkte: Umfassende und systematische Selbstreflexions- und Überprüfungstools
+      weight: 2.0
+
+    - name: "Zielgruppenanpassung"
+      description: |
+        Werden die Inhalte an Vorwissen und Lebenswelt der Zielgruppe angepasst?
+        1 Punkt: Keine Anpassung an Zielgruppe erkennbar
+        2 Punkte: Geringe Berücksichtigung der Zielgruppe
+        3 Punkte: Teilweise zielgruppengerechte Anpassung
+        4 Punkte: Gute Anpassung an Vorwissen und Lebenswelt
+        5 Punkte: Vollständig zielgruppengerecht angepasst
+      weight: 2.5
+
+    - name: "Differenzierung"
+      description: |
+        Ist eine Differenzierung nach Leistungsniveaus oder Interessen vorgesehen?
+        1 Punkt: Keine Differenzierungsmöglichkeiten
+        2 Punkte: Vereinzelte, unstrukturierte Differenzierungsansätze
+        3 Punkte: Grundlegende Differenzierung vorhanden
+        4 Punkte: Gute Differenzierung nach Leistung und Interessen
+        5 Punkte: Umfassende und systematische Differenzierungsmöglichkeiten
+      weight: 2.0
+
+    - name: "Übungsmöglichkeiten"
+      description: |
+        Bietet das Material ausreichend Übungsmöglichkeiten zur Vertiefung?
+        1 Punkt: Keine oder sehr wenige Übungsmöglichkeiten
+        2 Punkte: Vereinzelte Übungen, aber unzureichend
+        3 Punkte: Grundlegende Übungsmöglichkeiten vorhanden
+        4 Punkte: Ausreichend vielfältige Übungsmöglichkeiten
+        5 Punkte: Umfassende und abwechslungsreiche Übungsangebote
+      weight: 2.0
+
+    - name: "Sozialformen"
+      description: |
+        Werden verschiedene Sozialformen (Einzel-, Partner-, Gruppenarbeit) unterstützt?
+        1 Punkt: Nur eine Sozialform berücksichtigt
+        2 Punkte: Wenige Sozialformen, begrenzte Vielfalt
+        3 Punkte: Einige verschiedene Sozialformen angeboten
+        4 Punkte: Gute Vielfalt verschiedener Sozialformen
+        5 Punkte: Umfassende Unterstützung aller relevanten Sozialformen
+      weight: 1.5
+
+    - name: "Eigenständiges Lernen"
+      description: |
+        Fördert das Material eigenständiges und problemlösendes Lernen?
+        1 Punkt: Keine Förderung eigenständigen Lernens
+        2 Punkte: Geringe Anregung zu eigenständigem Lernen
+        3 Punkte: Teilweise Förderung eigenständigen Lernens
+        4 Punkte: Gute Förderung von Eigenständigkeit und Problemlösung
+        5 Punkte: Umfassende Förderung eigenständigen und problemlösenden Lernens
+      weight: 2.5
+
+    - name: "Authentische Beispiele"
+      description: |
+        Werden authentische und lebensnahe Beispiele verwendet?
+        1 Punkt: Keine authentischen oder lebensnahen Beispiele
+        2 Punkte: Vereinzelte, aber wenig authentische Beispiele
+        3 Punkte: Einige authentische Beispiele vorhanden
+        4 Punkte: Überwiegend authentische und lebensnahe Beispiele
+        5 Punkte: Durchgehend authentische, lebensnahe und relevante Beispiele
+      weight: 2.0
+
+    - name: "Sprachliche Angemessenheit"
+      description: |
+        Ist die Sprache adressatengerecht und verständlich?
+        1 Punkt: Sprache nicht adressatengerecht, schwer verständlich
+        2 Punkte: Teilweise angemessen, aber oft zu komplex oder zu einfach
+        3 Punkte: Grundsätzlich angemessen, aber nicht durchgängig
+        4 Punkte: Überwiegend adressatengerecht und verständlich
+        5 Punkte: Vollständig adressatengerecht, klar und verständlich
+      weight: 2.0
+
+    - name: "Feedback und Lernkontrolle"
+      description: |
+        Gibt es Feedbackmöglichkeiten oder Hinweise zur Lernkontrolle?
+        1 Punkt: Keine Feedback- oder Lernkontrollmöglichkeiten
+        2 Punkte: Vereinzelte, unstrukturierte Feedbackhinweise
+        3 Punkte: Grundlegende Feedback- und Kontrollmöglichkeiten
+        4 Punkte: Regelmäßige und strukturierte Feedbackmöglichkeiten
+        5 Punkte: Umfassende und systematische Feedback- und Lernkontrollsysteme
+      weight: 2.0
+
+    - name: "Digitale Integration"
+      description: |
+        Werden moderne Medien oder digitale Tools sinnvoll integriert?
+        1 Punkt: Keine Integration digitaler Medien oder Tools
+        2 Punkte: Vereinzelte, aber wenig sinnvolle digitale Elemente
+        3 Punkte: Grundlegende digitale Integration vorhanden
+        4 Punkte: Gute und sinnvolle Integration digitaler Tools
+        5 Punkte: Umfassende und didaktisch durchdachte digitale Integration
+      weight: 1.5
+
+    - name: "Wissenschaftliche Fundierung"
+      description: |
+        Ist die Methodik an aktuellen wissenschaftlichen Erkenntnissen orientiert?
+        1 Punkt: Keine wissenschaftliche Fundierung erkennbar
+        2 Punkte: Veraltete oder fragwürdige methodische Ansätze
+        3 Punkte: Teilweise wissenschaftlich fundiert
+        4 Punkte: Überwiegend an aktuellen Erkenntnissen orientiert
+        5 Punkte: Vollständig auf aktuellen wissenschaftlichen Erkenntnissen basierend
+      weight: 2.0
+
+    - name: "Alternative Lösungswege"
+      description: |
+        Werden alternative Lösungswege oder Perspektiven zugelassen?
+        1 Punkt: Nur ein Lösungsweg, keine Alternativen zugelassen
+        2 Punkte: Vereinzelte alternative Ansätze erwähnt
+        3 Punkte: Einige alternative Lösungswege aufgezeigt
+        4 Punkte: Regelmäßige Berücksichtigung alternativer Perspektiven
+        5 Punkte: Umfassende Förderung alternativer Lösungswege und Perspektiven
+      weight: 2.0
+
+    - name: "Heterogenitätsberücksichtigung"
+      description: |
+        Ist der Umgang mit Heterogenität (z.B. Inklusion, Diversität) berücksichtigt?
+        1 Punkt: Keine Berücksichtigung von Heterogenität
+        2 Punkte: Oberflächliche Berücksichtigung von Diversität
+        3 Punkte: Grundlegende Heterogenitätsberücksichtigung
+        4 Punkte: Gute Berücksichtigung verschiedener Bedürfnisse und Hintergründe
+        5 Punkte: Umfassende und systematische Heterogenitäts- und Inklusionsberücksichtigung
+      weight: 2.0
+
+    - name: "Methodische Überarbeitung"
+      description: |
+        Gibt es Hinweise auf eine regelmäßige methodische Überarbeitung?
+        1 Punkt: Keine Hinweise auf methodische Überarbeitung
+        2 Punkte: Vereinzelte, unklare Überarbeitungshinweise
+        3 Punkte: Gelegentliche methodische Aktualisierungen erkennbar
+        4 Punkte: Regelmäßige methodische Überarbeitung dokumentiert
+        5 Punkte: Systematische und kontinuierliche methodische Weiterentwicklung
+      weight: 1.0
+
+    - name: "Transfermöglichkeiten"
+      description: |
+        Werden Transfermöglichkeiten in andere Kontexte oder Fächer aufgezeigt?
+        1 Punkt: Keine Transfermöglichkeiten aufgezeigt
+        2 Punkte: Vereinzelte, oberflächliche Transferhinweise
+        3 Punkte: Einige Transfermöglichkeiten erwähnt
+        4 Punkte: Regelmäßige und klare Transfermöglichkeiten aufgezeigt
+        5 Punkte: Umfassende und systematische Transferförderung in verschiedene Kontexte
+      weight: 1.5

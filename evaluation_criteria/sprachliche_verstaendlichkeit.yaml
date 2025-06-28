@@ -1,0 +1,213 @@
+evaluation_criteria:
+  name: "Sprachliche Verständlichkeit"
+  description: "Bewertung der sprachlichen Klarheit, Präzision und Verständlichkeit von Bildungsinhalten"
+  scale: 
+    min: 1
+    max: 5
+    type: "likert_5"
+    labels:
+      "1": "Stimme überhaupt nicht zu"
+      "2": "Stimme eher nicht zu"
+      "3": "Neutral/Teils-teils"
+      "4": "Stimme eher zu"
+      "5": "Stimme voll und ganz zu"
+  criteria:
+    - name: "Sprachliche Klarheit"
+      description: |
+        Ist die Sprache klar und präzise formuliert?
+        1 Punkt: Sprache sehr unklar, unpräzise und schwer verständlich
+        2 Punkte: Sprache teilweise unklar, oft unpräzise
+        3 Punkte: Sprache grundsätzlich verständlich, aber nicht durchgängig klar
+        4 Punkte: Sprache überwiegend klar und präzise formuliert
+        5 Punkte: Sprache durchgehend klar, präzise und verständlich
+      weight: 2.5
+
+    - name: "Satzlänge und Einfachheit"
+      description: |
+        Werden Sätze überwiegend kurz und einfach gehalten?
+        1 Punkt: Überwiegend sehr lange und komplexe Sätze
+        2 Punkte: Viele lange Sätze, schwer zu folgen
+        3 Punkte: Gemischte Satzlängen, teilweise zu komplex
+        4 Punkte: Überwiegend angemessene Satzlänge und Struktur
+        5 Punkte: Durchgehend kurze, einfache und gut verständliche Sätze
+      weight: 2.0
+
+    - name: "Satzbau"
+      description: |
+        Ist der Satzbau übersichtlich und logisch aufgebaut?
+        1 Punkt: Chaotischer, unlogischer Satzbau
+        2 Punkte: Oft unübersichtlicher oder verwirrender Satzbau
+        3 Punkte: Grundsätzlich logisch, aber nicht immer übersichtlich
+        4 Punkte: Überwiegend übersichtlicher und logischer Satzbau
+        5 Punkte: Durchgehend klarer, übersichtlicher und logischer Satzbau
+      weight: 2.0
+
+    - name: "Satzkomplexität"
+      description: |
+        Wird auf unnötig komplexe oder verschachtelte Sätze verzichtet?
+        1 Punkt: Viele unnötig komplexe und verschachtelte Sätze
+        2 Punkte: Häufig zu komplexe Satzstrukturen
+        3 Punkte: Teilweise komplexe Sätze, aber meist angemessen
+        4 Punkte: Überwiegend angemessene Satzkomplexität
+        5 Punkte: Durchgehend angemessene Komplexität, keine unnötigen Verschachtelungen
+      weight: 2.0
+
+    - name: "Fachbegriffserklärung"
+      description: |
+        Werden Fachbegriffe erklärt, sofern sie verwendet werden?
+        1 Punkt: Fachbegriffe werden nicht erklärt, schwer verständlich
+        2 Punkte: Wenige Fachbegriffe erklärt, oft unklar
+        3 Punkte: Einige Fachbegriffe erklärt, aber nicht durchgängig
+        4 Punkte: Die meisten Fachbegriffe werden angemessen erklärt
+        5 Punkte: Alle Fachbegriffe werden klar und verständlich erklärt
+      weight: 2.5
+
+    - name: "Zielgruppengerechter Wortschatz"
+      description: |
+        Ist der Wortschatz an die Zielgruppe angepasst?
+        1 Punkt: Wortschatz völlig ungeeignet für die Zielgruppe
+        2 Punkte: Wortschatz oft zu schwer oder zu einfach
+        3 Punkte: Wortschatz teilweise angemessen für die Zielgruppe
+        4 Punkte: Wortschatz überwiegend zielgruppengerecht
+        5 Punkte: Wortschatz vollständig an die Zielgruppe angepasst
+      weight: 2.5
+
+    - name: "Sprachregister"
+      description: |
+        Wird auf Umgangssprache, Dialekte oder Slang verzichtet?
+        1 Punkt: Häufige Verwendung von Umgangssprache oder Slang
+        2 Punkte: Gelegentliche umgangssprachliche Elemente
+        3 Punkte: Überwiegend angemessenes Sprachregister
+        4 Punkte: Konsistent angemessenes, formelles Sprachregister
+        5 Punkte: Durchgehend professionelles und angemessenes Sprachregister
+      weight: 1.5
+
+    - name: "Eindeutigkeit"
+      description: |
+        Sind die Formulierungen eindeutig und vermeiden Mehrdeutigkeiten?
+        1 Punkt: Viele mehrdeutige oder unklare Formulierungen
+        2 Punkte: Häufig mehrdeutige Aussagen
+        3 Punkte: Teilweise eindeutig, aber einige Unklarheiten
+        4 Punkte: Überwiegend eindeutige Formulierungen
+        5 Punkte: Durchgehend eindeutige und klare Formulierungen
+      weight: 2.0
+
+    - name: "Sprachliche Korrektheit"
+      description: |
+        Ist der Text frei von Rechtschreib- und Grammatikfehlern?
+        1 Punkt: Viele Rechtschreib- und Grammatikfehler
+        2 Punkte: Häufige sprachliche Fehler
+        3 Punkte: Einige Fehler, aber grundsätzlich korrekt
+        4 Punkte: Überwiegend fehlerfrei, nur vereinzelte Fehler
+        5 Punkte: Vollständig fehlerfrei in Rechtschreibung und Grammatik
+      weight: 2.0
+
+    - name: "Strukturierung und Hervorhebung"
+      description: |
+        Werden wichtige Informationen hervorgehoben oder strukturiert dargestellt?
+        1 Punkt: Keine Strukturierung oder Hervorhebung wichtiger Inhalte
+        2 Punkte: Wenig Strukturierung, wichtige Punkte nicht erkennbar
+        3 Punkte: Grundlegende Strukturierung vorhanden
+        4 Punkte: Gute Strukturierung und Hervorhebung wichtiger Punkte
+        5 Punkte: Excellente Strukturierung mit klarer Hervorhebung aller wichtigen Informationen
+      weight: 2.0
+
+    - name: "Vorwissensunabhängigkeit"
+      description: |
+        Ist der Text für Personen mit unterschiedlichem Vorwissen verständlich?
+        1 Punkt: Nur für Experten verständlich
+        2 Punkte: Erfordert umfangreiches Vorwissen
+        3 Punkte: Teilweise auch ohne Vorwissen verständlich
+        4 Punkte: Überwiegend auch für Laien verständlich
+        5 Punkte: Vollständig verständlich unabhängig vom Vorwissen
+      weight: 2.5
+
+    - name: "Veranschaulichung"
+      description: |
+        Werden Beispiele oder Vergleiche zur Veranschaulichung genutzt?
+        1 Punkt: Keine Beispiele oder Veranschaulichungen
+        2 Punkte: Wenige, oft unpassende Beispiele
+        3 Punkte: Einige hilfreiche Beispiele vorhanden
+        4 Punkte: Regelmäßige und gute Veranschaulichungen
+        5 Punkte: Umfassende und excellente Veranschaulichung durch Beispiele und Vergleiche
+      weight: 2.0
+
+    - name: "Motivierende Sprache"
+      description: |
+        Ist die Sprache motivierend und ansprechend gestaltet?
+        1 Punkt: Sprache demotivierend oder langweilig
+        2 Punkte: Wenig ansprechende Sprache
+        3 Punkte: Neutral, weder motivierend noch demotivierend
+        4 Punkte: Überwiegend motivierend und ansprechend
+        5 Punkte: Durchgehend motivierend, ansprechend und einladend
+      weight: 1.5
+
+    - name: "Fremdwort- und Abkürzungserklärung"
+      description: |
+        Werden Fremdwörter oder Abkürzungen erklärt?
+        1 Punkt: Fremdwörter und Abkürzungen werden nicht erklärt
+        2 Punkte: Wenige Erklärungen, oft unvollständig
+        3 Punkte: Einige Fremdwörter und Abkürzungen erklärt
+        4 Punkte: Die meisten Fremdwörter und Abkürzungen werden erklärt
+        5 Punkte: Alle Fremdwörter und Abkürzungen werden klar erklärt
+      weight: 2.0
+
+    - name: "Vorlesbarkeit"
+      description: |
+        Ist der Text so gestaltet, dass er auch beim (lauten) Vorlesen gut verständlich bleibt?
+        1 Punkt: Text beim Vorlesen schwer verständlich
+        2 Punkte: Beim Vorlesen teilweise schwer zu folgen
+        3 Punkte: Grundsätzlich vorlesbar, aber nicht optimal
+        4 Punkte: Gut zum Vorlesen geeignet
+        5 Punkte: Excellente Vorlesbarkeit mit natürlichem Sprachfluss
+      weight: 1.5
+
+    - name: "Sprachliche Prägnanz"
+      description: |
+        Wird auf Füllwörter und unnötige Wiederholungen verzichtet?
+        1 Punkt: Viele Füllwörter und unnötige Wiederholungen
+        2 Punkte: Häufige Füllwörter oder Redundanzen
+        3 Punkte: Teilweise prägnant, aber einige überflüssige Elemente
+        4 Punkte: Überwiegend prägnant und ohne Füllwörter
+        5 Punkte: Durchgehend prägnant, klar und ohne überflüssige Elemente
+      weight: 1.5
+
+    - name: "Lesbarkeitsoptimierung"
+      description: |
+        Gibt es Hinweise auf Lesbarkeit (z. B. kurze Absätze, Aufzählungen)?
+        1 Punkt: Keine Lesbarkeitsoptimierung erkennbar
+        2 Punkte: Wenige Elemente zur Lesbarkeitsverbesserung
+        3 Punkte: Grundlegende Lesbarkeitsoptimierung vorhanden
+        4 Punkte: Gute Lesbarkeitsoptimierung durch Struktur und Format
+        5 Punkte: Excellente Lesbarkeitsoptimierung mit allen relevanten Elementen
+      weight: 2.0
+
+    - name: "Inklusive Sprache"
+      description: |
+        Ist die Sprache inklusiv und diskriminierungsfrei?
+        1 Punkt: Diskriminierende oder ausschließende Sprache
+        2 Punkte: Teilweise problematische Formulierungen
+        3 Punkte: Grundsätzlich neutral, aber nicht durchgängig inklusiv
+        4 Punkte: Überwiegend inklusive und diskriminierungsfreie Sprache
+        5 Punkte: Durchgehend inklusive, respektvolle und diskriminierungsfreie Sprache
+      weight: 2.0
+
+    - name: "Begriffskonsistenz"
+      description: |
+        Werden zentrale Begriffe konsistent verwendet?
+        1 Punkt: Inkonsistente Begriffsverwendung, verwirrend
+        2 Punkte: Häufig wechselnde Begriffe für gleiche Konzepte
+        3 Punkte: Teilweise konsistent, aber einige Unklarheiten
+        4 Punkte: Überwiegend konsistente Begriffsverwendung
+        5 Punkte: Durchgehend konsistente und klare Begriffsverwendung
+      weight: 2.0
+
+    - name: "Hilfsmittelunabhängigkeit"
+      description: |
+        Ist der Text ohne zusätzliche Hilfsmittel (z. B. Wörterbuch) verständlich?
+        1 Punkt: Häufig zusätzliche Hilfsmittel erforderlich
+        2 Punkte: Gelegentlich Hilfsmittel nötig
+        3 Punkte: Überwiegend ohne Hilfsmittel verständlich
+        4 Punkte: Gut ohne zusätzliche Hilfsmittel verständlich
+        5 Punkte: Vollständig ohne Hilfsmittel verständlich und zugänglich
+      weight: 2.0

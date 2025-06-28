@@ -1,0 +1,205 @@
+evaluation_criteria:
+  name: "Neutralität"
+  description: "Bewertung der neutralen und objektiven Darstellung von Bildungsinhalten"
+  scale: 
+    min: 1
+    max: 4
+    type: "likert_4"
+    labels:
+      "1": "Stimme überhaupt nicht zu"
+      "2": "Stimme eher nicht zu"
+      "3": "Stimme eher zu"
+      "4": "Stimme voll und ganz zu"
+  criteria:
+    - name: "Perspektivenvielfalt"
+      description: |
+        Werden verschiedene Perspektiven auf das Thema umfassend und gleichwertig präsentiert?
+        1 Punkt: Nur eine Perspektive wird dargestellt
+        2 Punkte: Wenige Perspektiven, unausgewogen
+        3 Punkte: Mehrere Perspektiven, meist ausgewogen
+        4 Punkte: Umfassende und gleichwertige Darstellung verschiedener Perspektiven
+      weight: 2.0
+    - name: "Neutrale Beschreibung"
+      description: |
+        Werden die unterschiedlichen Perspektiven neutral und ohne Vorurteile beschrieben?
+        1 Punkt: Deutliche Vorurteile und Wertungen erkennbar
+        2 Punkte: Einige vorurteilsbehaftete Formulierungen
+        3 Punkte: Überwiegend neutral, wenige Wertungen
+        4 Punkte: Vollständig neutral und vorurteilsfrei
+      weight: 2.0
+    - name: "Meinungsbildung"
+      description: |
+        Bietet das Material den Lernenden die Möglichkeit, eine eigene Meinung zu bilden, ohne sie zu beeinflussen?
+        1 Punkt: Starke Beeinflussung, keine Wahlmöglichkeit
+        2 Punkte: Deutliche Lenkung der Meinungsbildung
+        3 Punkte: Geringe Beeinflussung, meist offen
+        4 Punkte: Vollständig offen für eigene Meinungsbildung
+      weight: 2.0
+    - name: "Sprachliche Neutralität"
+      description: |
+        Wird auf manipulative Sprache und emotionale Beeinflussung konsequent verzichtet?
+        1 Punkt: Stark manipulative und emotionale Sprache
+        2 Punkte: Einige manipulative Elemente vorhanden
+        3 Punkte: Überwiegend sachlich, wenige emotionale Elemente
+        4 Punkte: Vollständig sachlich und neutral
+      weight: 2.0
+    - name: "Quellenglaubwürdigkeit"
+      description: |
+        Sind alle Informationen durch glaubwürdige und verlässliche Quellen belegt?
+        1 Punkt: Keine oder unglaubwürdige Quellen
+        2 Punkte: Wenige oder teilweise fragwürdige Quellen
+        3 Punkte: Überwiegend glaubwürdige Quellen
+        4 Punkte: Alle Quellen sind glaubwürdig und verlässlich
+      weight: 1.5
+    - name: "Wissenschaftliche Fairness"
+      description: |
+        Werden alternative wissenschaftliche Theorien fair und nachvollziehbar dargestellt?
+        1 Punkt: Einseitige oder unfaire Darstellung
+        2 Punkte: Unausgewogene Behandlung alternativer Theorien
+        3 Punkte: Überwiegend faire Darstellung
+        4 Punkte: Vollständig faire und nachvollziehbare Darstellung
+      weight: 1.5
+    - name: "Politische Ausgewogenheit"
+      description: |
+        Werden politische Positionen ausgewogen und ohne Präferenz präsentiert?
+        1 Punkt: Starke politische Voreingenommenheit
+        2 Punkte: Erkennbare politische Präferenz
+        3 Punkte: Überwiegend ausgewogen
+        4 Punkte: Vollständig ausgewogen ohne Präferenz
+      weight: 2.0
+    - name: "Ideologische Neutralität"
+      description: |
+        Vermeidet das Material bewusst die Bevorzugung bestimmter politischer Parteien oder Ideologien?
+        1 Punkt: Deutliche ideologische Bevorzugung
+        2 Punkte: Erkennbare ideologische Tendenz
+        3 Punkte: Überwiegend neutral
+        4 Punkte: Vollständig frei von ideologischer Bevorzugung
+      weight: 2.0
+    - name: "Kritisches Denken"
+      description: |
+        Regt das Material die Lernenden dazu an, kritisch zu hinterfragen und eigenständig zu analysieren?
+        1 Punkt: Keine Anregung zum kritischen Denken
+        2 Punkte: Wenig Anregung zur kritischen Analyse
+        3 Punkte: Gute Anregung zum Hinterfragen
+        4 Punkte: Starke Förderung kritischen und eigenständigen Denkens
+      weight: 1.5
+    - name: "Analysemethoden"
+      description: |
+        Werden Methoden zur strukturierten Analyse und Bewertung von Informationen klar vermittelt?
+        1 Punkt: Keine Analysemethoden vermittelt
+        2 Punkte: Unklare oder unvollständige Methoden
+        3 Punkte: Gute Vermittlung von Analysemethoden
+        4 Punkte: Klare und umfassende Vermittlung strukturierter Analysemethoden
+      weight: 1.0
+    - name: "Demokratische Grundwerte"
+      description: |
+        Sind die demokratischen Grundwerte verständlich und objektiv erklärt?
+        1 Punkt: Unverständlich oder subjektiv dargestellt
+        2 Punkte: Teilweise verständlich, einige subjektive Elemente
+        3 Punkte: Überwiegend verständlich und objektiv
+        4 Punkte: Vollständig verständlich und objektiv erklärt
+      weight: 1.5
+    - name: "Demokratische Reflexion"
+      description: |
+        Wird die Reflexion demokratischer Prinzipien angeregt, ohne Vorgaben zu machen?
+        1 Punkt: Starke Vorgaben, keine freie Reflexion
+        2 Punkte: Einige Vorgaben erkennbar
+        3 Punkte: Überwiegend offene Reflexion
+        4 Punkte: Vollständig offene Anregung zur Reflexion ohne Vorgaben
+      weight: 1.5
+    - name: "Neutrale Beispiele"
+      description: |
+        Werden praktische Beispiele und Übungen neutral und ohne ideologische Voreingenommenheit dargestellt?
+        1 Punkt: Stark ideologisch gefärbte Beispiele
+        2 Punkte: Einige voreingenommene Beispiele
+        3 Punkte: Überwiegend neutrale Beispiele
+        4 Punkte: Vollständig neutrale und unvoreingenommene Beispiele
+      weight: 1.0
+    - name: "Praxisanwendung"
+      description: |
+        Wird die Anwendung des Gelernten in der Praxis ohne ideologische Färbung gefördert?
+        1 Punkt: Starke ideologische Färbung der Praxisanwendung
+        2 Punkte: Erkennbare ideologische Einflüsse
+        3 Punkte: Überwiegend neutral
+        4 Punkte: Vollständig neutral ohne ideologische Färbung
+      weight: 1.0
+    - name: "Altersgerechte Neutralität"
+      description: |
+        Ist das Material altersgerecht aufbereitet und berücksichtigt es den Entwicklungsstand der Lernenden, ohne dabei inhaltlich eine bestimmte Sichtweise zu bevorzugen?
+        1 Punkt: Nicht altersgerecht und voreingenommen
+        2 Punkte: Teilweise altersgerecht, einige Voreingenommenheiten
+        3 Punkte: Überwiegend altersgerecht und neutral
+        4 Punkte: Vollständig altersgerecht ohne Bevorzugung bestimmter Sichtweisen
+      weight: 1.0
+    - name: "Methodenvielfalt"
+      description: |
+        Berücksichtigt das Material verschiedene Lernstile und Bedürfnisse der Lernenden, ohne eine Methode als die einzig richtige darzustellen?
+        1 Punkt: Nur eine Methode als richtig dargestellt
+        2 Punkte: Bevorzugung bestimmter Methoden erkennbar
+        3 Punkte: Überwiegend offene Methodendarstellung
+        4 Punkte: Vollständig offene Berücksichtigung verschiedener Lernstile
+      weight: 1.0
+    - name: "Autorenneutralität"
+      description: |
+        Werden die Inhalte neutral und ohne persönliche Wertungen des Autors dargestellt?
+        1 Punkt: Starke persönliche Wertungen erkennbar
+        2 Punkte: Einige persönliche Wertungen vorhanden
+        3 Punkte: Überwiegend neutral
+        4 Punkte: Vollständig neutral ohne persönliche Wertungen
+      weight: 1.5
+    - name: "Überzeugungsneutralität"
+      description: |
+        Beeinflussen persönliche Überzeugungen des Autors nicht die Art und Weise der Darstellung?
+        1 Punkt: Starker Einfluss persönlicher Überzeugungen
+        2 Punkte: Erkennbarer Einfluss persönlicher Überzeugungen
+        3 Punkte: Geringer Einfluss
+        4 Punkte: Kein Einfluss persönlicher Überzeugungen erkennbar
+      weight: 1.5
+    - name: "Weltanschauliche Offenheit"
+      description: |
+        Wird bewusst darauf verzichtet, eine bestimmte Weltanschauung als einzig gültig darzustellen?
+        1 Punkt: Eine Weltanschauung als einzig gültig dargestellt
+        2 Punkte: Bevorzugung einer Weltanschauung erkennbar
+        3 Punkte: Überwiegend offen für verschiedene Weltanschauungen
+        4 Punkte: Vollständig offen, keine Weltanschauung als einzig gültig
+      weight: 2.0
+    - name: "Respekt für Alternativen"
+      description: |
+        Werden alternative Sichtweisen respektiert und als legitime Optionen dargestellt?
+        1 Punkt: Alternative Sichtweisen werden nicht respektiert
+        2 Punkte: Wenig Respekt für alternative Sichtweisen
+        3 Punkte: Überwiegend respektvolle Darstellung
+        4 Punkte: Vollständig respektvolle Darstellung alternativer Sichtweisen
+      weight: 1.5
+    - name: "Fehlinformationsschutz"
+      description: |
+        Bietet das Material Strategien zur Erkennung von Fehlinformationen und Desinformation?
+        1 Punkt: Keine Strategien zur Fehlinformationserkennung
+        2 Punkte: Unvollständige oder unklare Strategien
+        3 Punkte: Gute Strategien zur Fehlinformationserkennung
+        4 Punkte: Umfassende und klare Strategien zur Erkennung von Fehlinformationen
+      weight: 1.0
+    - name: "Kritische Medienkompetenz"
+      description: |
+        Wird die Bedeutung und der Einfluss von Fehlinformationen kritisch thematisiert?
+        1 Punkt: Keine kritische Thematisierung
+        2 Punkte: Oberflächliche Behandlung
+        3 Punkte: Gute kritische Thematisierung
+        4 Punkte: Umfassende und kritische Thematisierung von Fehlinformationen
+      weight: 1.0
+    - name: "Aktualität"
+      description: |
+        Sind die dargestellten Informationen aktuell und auf dem neuesten Stand?
+        1 Punkt: Veraltete oder überholte Informationen
+        2 Punkte: Teilweise veraltete Informationen
+        3 Punkte: Überwiegend aktuelle Informationen
+        4 Punkte: Vollständig aktuelle und neueste Informationen
+      weight: 1.0
+    - name: "Objektive Ereigniseinbindung"
+      description: |
+        Werden relevante aktuelle Ereignisse, wenn notwendig, objektiv in die Inhalte eingebunden?
+        1 Punkt: Subjektive oder verzerrte Ereignisdarstellung
+        2 Punkte: Teilweise objektive Darstellung
+        3 Punkte: Überwiegend objektive Ereigniseinbindung
+        4 Punkte: Vollständig objektive Einbindung aktueller Ereignisse
+      weight: 1.0

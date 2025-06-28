@@ -1,0 +1,77 @@
+site_name: Classification API Documentation
+site_description: API for zero-shot classification of educational metadata with SKOS vocabularies and resource suggestions
+site_author: Jan Schachtschabel
+site_url: https://janschachtschabel.github.io/classificationapi
+
+repo_name: classificationapi
+repo_url: https://github.com/janschachtschabel/classificationapi
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            show_root_toc_entry: false
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+    - Configuration: getting-started/configuration.md
+  - API Reference:
+    - Overview: api/overview.md
+    - Health Check: api/health.md
+    - Classification: api/classification.md
+    - Error Handling: api/errors.md
+  - Examples:
+    - SKOS Classification: examples/skos.md
+    - Custom Categories: examples/custom.md
+    - Batch Processing: examples/batch.md
+  - Development:
+    - Contributing: development/contributing.md
+    - Testing: development/testing.md
+    - Deployment: development/deployment.md
+  - API Schema: api/schema.md

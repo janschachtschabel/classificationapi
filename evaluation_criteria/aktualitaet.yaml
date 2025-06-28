@@ -1,0 +1,213 @@
+evaluation_criteria:
+  name: "Aktualität"
+  description: "Bewertung der zeitlichen Relevanz und des aktuellen Stands von Bildungsinhalten"
+  scale: 
+    min: 1
+    max: 5
+    type: "likert_5"
+    labels:
+      "1": "Stimme überhaupt nicht zu"
+      "2": "Stimme eher nicht zu"
+      "3": "Neutral/Teils-teils"
+      "4": "Stimme eher zu"
+      "5": "Stimme voll und ganz zu"
+  criteria:
+    - name: "Zeitangaben"
+      description: |
+        Wird im Text ein konkretes Jahr oder Datum genannt, das die Aktualität belegt?
+        1 Punkt: Keine Zeitangaben oder sehr veraltete Daten (>10 Jahre)
+        2 Punkte: Vereinzelte veraltete Zeitangaben (5-10 Jahre)
+        3 Punkte: Gemischte Zeitangaben, teilweise aktuell
+        4 Punkte: Überwiegend aktuelle Zeitangaben (1-3 Jahre)
+        5 Punkte: Durchgehend aktuelle Zeitangaben (letztes Jahr oder aktueller)
+      weight: 2.0
+
+    - name: "Aktuelle Forschung"
+      description: |
+        Wird auf aktuelle Forschungsergebnisse oder Studien Bezug genommen?
+        1 Punkt: Keine aktuellen Forschungsergebnisse erwähnt
+        2 Punkte: Vereinzelte, aber veraltete Studien zitiert
+        3 Punkte: Gemischte Referenzen auf Forschung verschiedener Zeiträume
+        4 Punkte: Überwiegend aktuelle Forschungsergebnisse (letzten 3 Jahre)
+        5 Punkte: Durchgehend neueste Forschungsergebnisse und Studien
+      weight: 2.5
+
+    - name: "Rechtliche Aktualität"
+      description: |
+        Enthält der Text Hinweise auf neue oder kürzlich geänderte Gesetze/Regelungen?
+        1 Punkt: Veraltete oder überholte Rechtsgrundlagen
+        2 Punkte: Teilweise veraltete rechtliche Informationen
+        3 Punkte: Gemischte rechtliche Informationen
+        4 Punkte: Überwiegend aktuelle Rechtsgrundlagen
+        5 Punkte: Vollständig aktuelle Gesetze und Regelungen
+      weight: 2.0
+
+    - name: "Gesellschaftliche Entwicklungen"
+      description: |
+        Werden aktuelle gesellschaftliche, politische oder technologische Entwicklungen erwähnt?
+        1 Punkt: Keine Bezugnahme auf aktuelle Entwicklungen
+        2 Punkte: Vereinzelte, aber oberflächliche Erwähnungen
+        3 Punkte: Teilweise Berücksichtigung aktueller Entwicklungen
+        4 Punkte: Gute Integration aktueller gesellschaftlicher Entwicklungen
+        5 Punkte: Umfassende und detaillierte Berücksichtigung aktueller Entwicklungen
+      weight: 2.0
+
+    - name: "Explizite Aktualitätshinweise"
+      description: |
+        Wird explizit auf den „neuesten Stand" oder „aktuelle Erkenntnisse" verwiesen?
+        1 Punkt: Keine expliziten Aktualitätshinweise
+        2 Punkte: Vereinzelte, aber unspezifische Hinweise
+        3 Punkte: Gelegentliche Hinweise auf Aktualität
+        4 Punkte: Regelmäßige explizite Aktualitätshinweise
+        5 Punkte: Durchgehend klare Betonung der Aktualität
+      weight: 1.5
+
+    - name: "Zeitgemäße Beispiele"
+      description: |
+        Sind die genannten Beispiele oder Anwendungsfälle eindeutig zeitgemäß?
+        1 Punkt: Veraltete oder anachronistische Beispiele
+        2 Punkte: Überwiegend veraltete Beispiele
+        3 Punkte: Gemischte Beispiele verschiedener Zeiträume
+        4 Punkte: Überwiegend zeitgemäße Beispiele
+        5 Punkte: Durchgehend aktuelle und zeitgemäße Beispiele
+      weight: 2.0
+
+    - name: "Bildungsstandards"
+      description: |
+        Wird auf aktuelle Lehrpläne oder Bildungsstandards Bezug genommen?
+        1 Punkt: Keine Bezugnahme auf Bildungsstandards
+        2 Punkte: Veraltete Bildungsstandards referenziert
+        3 Punkte: Teilweise aktuelle Bildungsstandards
+        4 Punkte: Überwiegend aktuelle Lehrpläne und Standards
+        5 Punkte: Vollständig aktuelle Bildungsstandards und Lehrpläne
+      weight: 1.5
+
+    - name: "Überarbeitungshinweise"
+      description: |
+        Gibt es Hinweise auf eine regelmäßige Überarbeitung oder Aktualisierung des Materials?
+        1 Punkt: Keine Hinweise auf Überarbeitung
+        2 Punkte: Seltene oder unklare Überarbeitungshinweise
+        3 Punkte: Gelegentliche Hinweise auf Aktualisierung
+        4 Punkte: Regelmäßige Überarbeitungshinweise
+        5 Punkte: Klare und systematische Aktualisierungszyklen dokumentiert
+      weight: 1.0
+
+    - name: "Zeitlose Gültigkeit"
+      description: |
+        Wird das Material als „zeitlos gültig" oder „grundlegend" bezeichnet (negativ für Aktualität)?
+        1 Punkt: Material wird als zeitlos/unveränderlich dargestellt
+        2 Punkte: Überwiegend als zeitlos gültig bezeichnet
+        3 Punkte: Gemischte Darstellung von zeitlosen und aktuellen Aspekten
+        4 Punkte: Betonung der Notwendigkeit regelmäßiger Aktualisierung
+        5 Punkte: Klare Anerkennung der zeitlichen Begrenztheit der Inhalte
+      weight: 1.0
+
+    - name: "Veraltete Inhalte"
+      description: |
+        Enthält der Text Hinweise auf veraltete Begriffe, Methoden oder Technologien?
+        1 Punkt: Viele veraltete Begriffe und Methoden ohne Hinweise
+        2 Punkte: Einige veraltete Inhalte, teilweise markiert
+        3 Punkte: Gemischte Inhalte mit teilweiser Kennzeichnung
+        4 Punkte: Wenige veraltete Inhalte, meist gekennzeichnet
+        5 Punkte: Keine veralteten Inhalte oder alle klar als veraltet markiert
+      weight: 1.5
+
+    - name: "Aktuelle Quellen"
+      description: |
+        Werden Quellen oder Referenzen mit Publikationsdaten aus den letzten 2 Jahren genannt?
+        1 Punkt: Keine aktuellen Quellen (alle >5 Jahre alt)
+        2 Punkte: Vereinzelte aktuelle Quellen (wenige <2 Jahre)
+        3 Punkte: Gemischte Quellenalter
+        4 Punkte: Überwiegend aktuelle Quellen (letzten 2-3 Jahre)
+        5 Punkte: Durchgehend sehr aktuelle Quellen (letzten 1-2 Jahre)
+      weight: 2.5
+
+    - name: "Aktuelle Herausforderungen"
+      description: |
+        Wird auf aktuelle Herausforderungen wie Digitalisierung, KI, Klimawandel etc. eingegangen?
+        1 Punkt: Keine Berücksichtigung aktueller Herausforderungen
+        2 Punkte: Oberflächliche Erwähnung aktueller Themen
+        3 Punkte: Teilweise Integration aktueller Herausforderungen
+        4 Punkte: Gute Berücksichtigung aktueller gesellschaftlicher Herausforderungen
+        5 Punkte: Umfassende und detaillierte Behandlung aktueller Herausforderungen
+      weight: 2.0
+
+    - name: "Letzte Überarbeitung"
+      description: |
+        Gibt es einen Hinweis auf die letzte inhaltliche Überarbeitung?
+        1 Punkt: Keine Angaben zur letzten Überarbeitung
+        2 Punkte: Sehr alte Überarbeitungsdaten (>5 Jahre)
+        3 Punkte: Mäßig aktuelle Überarbeitung (2-5 Jahre)
+        4 Punkte: Relativ aktuelle Überarbeitung (letztes Jahr)
+        5 Punkte: Sehr aktuelle Überarbeitung (letzten 6 Monate)
+      weight: 1.5
+
+    - name: "Aktualisierungsmarkierung"
+      description: |
+        Wird das Material als „überarbeitet", „neu", „aktualisiert" oder ähnlich beschrieben?
+        1 Punkt: Keine Aktualisierungsmarkierungen
+        2 Punkte: Vereinzelte, unspezifische Markierungen
+        3 Punkte: Gelegentliche Aktualisierungshinweise
+        4 Punkte: Regelmäßige und klare Aktualisierungsmarkierungen
+        5 Punkte: Systematische und detaillierte Aktualisierungskennzeichnung
+      weight: 1.0
+
+    - name: "Fachbegriffe Aktualität"
+      description: |
+        Sind die genannten Fachbegriffe und Definitionen auf dem aktuellen Stand der Wissenschaft?
+        1 Punkt: Veraltete oder überholte Fachbegriffe
+        2 Punkte: Überwiegend veraltete Terminologie
+        3 Punkte: Gemischte Terminologie verschiedener Zeiträume
+        4 Punkte: Überwiegend aktuelle Fachbegriffe
+        5 Punkte: Durchgehend neueste wissenschaftliche Terminologie
+      weight: 2.0
+
+    - name: "Aktuelle Ereignisse"
+      description: |
+        Wird auf aktuelle Ereignisse (z.B. Pandemie, neue Forschungsergebnisse) Bezug genommen?
+        1 Punkt: Keine Bezugnahme auf aktuelle Ereignisse
+        2 Punkte: Vereinzelte, oberflächliche Erwähnungen
+        3 Punkte: Gelegentliche Integration aktueller Ereignisse
+        4 Punkte: Regelmäßige und relevante Bezugnahme auf aktuelle Ereignisse
+        5 Punkte: Umfassende und kontextualisierte Integration aktueller Ereignisse
+      weight: 1.5
+
+    - name: "Neue Medienformate"
+      description: |
+        Enthält der Text Hinweise auf neue Medienformate oder digitale Tools?
+        1 Punkt: Keine Erwähnung neuer Medienformate
+        2 Punkte: Vereinzelte, veraltete Medienformate
+        3 Punkte: Gemischte Medienformate verschiedener Generationen
+        4 Punkte: Überwiegend aktuelle Medienformate und Tools
+        5 Punkte: Durchgehend neueste digitale Medienformate und Tools
+      weight: 1.5
+
+    - name: "Warnung vor Veraltetem"
+      description: |
+        Wird explizit vor veralteten Inhalten oder Beispielen gewarnt?
+        1 Punkt: Keine Warnungen vor veralteten Inhalten
+        2 Punkte: Vereinzelte, unklare Warnungen
+        3 Punkte: Gelegentliche Hinweise auf veraltete Inhalte
+        4 Punkte: Regelmäßige und klare Warnungen vor veralteten Inhalten
+        5 Punkte: Systematische und detaillierte Kennzeichnung veralteter Inhalte
+      weight: 1.0
+
+    - name: "Wissensstandsvergleich"
+      description: |
+        Gibt es einen Vergleich zwischen früherem und aktuellem Wissensstand?
+        1 Punkt: Kein Vergleich zwischen verschiedenen Wissensständen
+        2 Punkte: Oberflächlicher oder unklarer Vergleich
+        3 Punkte: Gelegentliche Vergleiche zwischen alt und neu
+        4 Punkte: Regelmäßige und klare Wissensstandsvergleiche
+        5 Punkte: Systematische und detaillierte Entwicklungsdarstellung des Wissens
+      weight: 1.5
+
+    - name: "Nutzerfeedback Aktualität"
+      description: |
+        Wird auf Feedback von Nutzern oder Experten zur Aktualität des Materials verwiesen?
+        1 Punkt: Kein Bezug auf Nutzerfeedback zur Aktualität
+        2 Punkte: Vereinzelte, unspezifische Feedbackhinweise
+        3 Punkte: Gelegentliche Erwähnung von Aktualitätsfeedback
+        4 Punkte: Regelmäßige Integration von Nutzerfeedback zur Aktualität
+        5 Punkte: Systematische Berücksichtigung und Dokumentation von Aktualitätsfeedback
+      weight: 1.0

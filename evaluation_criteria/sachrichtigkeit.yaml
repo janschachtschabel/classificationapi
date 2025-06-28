@@ -1,0 +1,74 @@
+evaluation_criteria:
+  name: "Sachrichtigkeit"
+  description: "Umfassende Bewertung der sachlichen Korrektheit, wissenschaftlichen Genauigkeit und methodischen Qualität von Bildungsinhalten"
+  scale: 
+    min: 1
+    max: 5
+    type: "likert_5"
+    labels:
+      "1": "Nicht erfüllt - grundlegende Überarbeitung erforderlich"
+      "2": "Kaum erfüllt - erhebliche Verbesserungen notwendig"
+      "3": "Teilweise erfüllt - erkennbare Schwächen vorhanden"
+      "4": "Weitgehend erfüllt - nur geringfügige Optimierungen möglich"
+      "5": "Vollständig erfüllt - exzellente Qualität, keine Verbesserungen erforderlich"
+  criteria:
+    - name: "Faktische Richtigkeit"
+      description: "1 Punkt: Viele faktische Fehler, Daten und Zahlen sind größtenteils falsch oder unbelegt. 2 Punkte: Mehrere faktische Fehler, wichtige Daten sind ungenau oder unbelegt. 3 Punkte: Einige faktische Ungenauigkeiten, die meisten Daten sind korrekt. 4 Punkte: Weitgehend faktisch korrekt, nur vereinzelte kleinere Ungenauigkeiten. 5 Punkte: Alle Fakten, Daten und Zahlen sind korrekt und durch verlässliche Quellen belegt."
+      weight: 2.0
+    - name: "Quellenqualität"
+      description: "1 Punkt: Verwendung unzuverlässiger oder fragwürdiger Quellen. 2 Punkte: Überwiegend schwache Quellen, wenige wissenschaftlich anerkannte Referenzen. 3 Punkte: Gemischte Quellenqualität, teilweise wissenschaftlich fundiert. 4 Punkte: Überwiegend hochwertige, wissenschaftlich anerkannte Quellen. 5 Punkte: Ausschließlich wissenschaftlich anerkannte und vertrauenswürdige Quellen."
+      weight: 1.5
+    - name: "Aktualitätsgrad"
+      description: "1 Punkt: Inhalte sind veraltet und entsprechen nicht dem aktuellen Forschungsstand. 2 Punkte: Teilweise veraltete Informationen, wichtige neue Erkenntnisse fehlen. 3 Punkte: Größtenteils aktuell, einige Bereiche könnten aktualisiert werden. 4 Punkte: Weitgehend aktuell, entspricht dem neuesten Stand. 5 Punkte: Vollständig aktuell und entspricht dem neuesten Stand der Wissenschaft und Forschung."
+      weight: 1.0
+    - name: "Vollständigkeit der Information"
+      description: "1 Punkt: Wichtige Aspekte des Themas fehlen vollständig. 2 Punkte: Erhebliche Lücken, viele relevante Aspekte werden nicht behandelt. 3 Punkte: Grundlegende Aspekte abgedeckt, aber einige wichtige Punkte fehlen. 4 Punkte: Umfassende Darstellung mit nur geringfügigen Auslassungen. 5 Punkte: Vollständige und umfassende Darstellung aller wichtigen Aspekte ohne relevante Auslassungen."
+      weight: 1.0
+    - name: "Wissenschaftliche Genauigkeit"
+      description: "1 Punkt: Wissenschaftliche Begriffe und Konzepte werden falsch verwendet oder erklärt. 2 Punkte: Häufige Ungenauigkeiten bei wissenschaftlichen Begriffen und Theorien. 3 Punkte: Grundsätzlich korrekte Verwendung mit gelegentlichen Ungenauigkeiten. 4 Punkte: Weitgehend präzise Verwendung wissenschaftlicher Terminologie. 5 Punkte: Wissenschaftliche Begriffe, Theorien und Konzepte werden vollständig korrekt verwendet und erklärt."
+      weight: 1.5
+    - name: "Objektivität der Darstellung"
+      description: "1 Punkt: Stark einseitige oder verzerrte Darstellung der Sachverhalte. 2 Punkte: Erkennbare Verzerrungen und subjektive Färbung. 3 Punkte: Überwiegend neutral mit gelegentlichen subjektiven Elementen. 4 Punkte: Weitgehend objektive und neutrale Darstellung. 5 Punkte: Vollständig neutrale und objektive Präsentation ohne einseitige Verzerrung."
+      weight: 1.0
+    - name: "Transparenz der Herkunft"
+      description: "1 Punkt: Quellen sind nicht dokumentiert oder nicht nachvollziehbar. 2 Punkte: Unvollständige oder unklare Quellenangaben. 3 Punkte: Grundlegende Quellenangaben vorhanden, aber teilweise unvollständig. 4 Punkte: Weitgehend vollständige und klare Quellenangaben. 5 Punkte: Alle verwendeten Quellen sind klar dokumentiert und vollständig nachvollziehbar zitiert."
+      weight: 1.0
+    - name: "Kontextuelle Einordnung"
+      description: "1 Punkt: Informationen werden ohne angemessenen Kontext präsentiert. 2 Punkte: Unzureichende kontextuelle Einbettung, wichtige Zusammenhänge fehlen. 3 Punkte: Grundlegende Kontextualisierung vorhanden, aber unvollständig. 4 Punkte: Weitgehend angemessene kontextuelle Einordnung. 5 Punkte: Informationen werden vollständig in ihren korrekten historischen, kulturellen oder wissenschaftlichen Kontext eingebettet."
+      weight: 1.0
+    - name: "Widerspruchsfreiheit"
+      description: "1 Punkt: Mehrere logische Widersprüche zwischen verschiedenen Aussagen. 2 Punkte: Einige erkennbare Widersprüche oder Inkonsistenzen. 3 Punkte: Überwiegend konsistent mit gelegentlichen kleineren Widersprüchen. 4 Punkte: Weitgehend widerspruchsfrei und logisch konsistent. 5 Punkte: Vollständig widerspruchsfrei, alle Aussagen sind logisch konsistent."
+      weight: 1.0
+    - name: "Plausibilitätsprüfung"
+      description: "1 Punkt: Zusammenhänge und Schlussfolgerungen sind nicht nachvollziehbar oder unlogisch. 2 Punkte: Viele Schlussfolgerungen sind schwer nachvollziehbar oder fragwürdig. 3 Punkte: Grundsätzlich plausibel, aber einige Zusammenhänge sind unklar. 4 Punkte: Weitgehend logisch nachvollziehbare Darstellung. 5 Punkte: Alle dargestellten Zusammenhänge und Schlussfolgerungen sind vollständig logisch nachvollziehbar."
+      weight: 1.0
+    - name: "Methodische Korrektheit"
+      description: "1 Punkt: Wissenschaftliche Methoden werden falsch dargestellt oder angewandt. 2 Punkte: Erhebliche methodische Fehler oder Ungenauigkeiten. 3 Punkte: Grundsätzlich korrekte Methodik mit gelegentlichen Fehlern. 4 Punkte: Weitgehend korrekte Darstellung wissenschaftlicher Methoden. 5 Punkte: Wissenschaftliche Methoden und Verfahren werden vollständig richtig dargestellt und angewandt."
+      weight: 1.0
+    - name: "Differenzierung von Fakten und Meinungen"
+      description: "1 Punkt: Keine klare Trennung zwischen Fakten und Meinungen/Interpretationen. 2 Punkte: Unzureichende Unterscheidung, Vermischung von Fakten und Meinungen. 3 Punkte: Grundsätzliche Trennung vorhanden, aber nicht immer klar erkennbar. 4 Punkte: Weitgehend klare Unterscheidung zwischen Fakten und Interpretationen. 5 Punkte: Vollständig klare Unterscheidung zwischen gesicherten Fakten und Interpretationen/Meinungen."
+      weight: 1.0
+    - name: "Evidenzbasierung"
+      description: "1 Punkt: Behauptungen sind nicht durch Belege gestützt oder Belege sind unzureichend. 2 Punkte: Schwache oder unvollständige Belegführung für wichtige Aussagen. 3 Punkte: Grundlegende Evidenz vorhanden, aber teilweise unzureichend. 4 Punkte: Weitgehend gut belegte Aussagen mit hochwertiger Evidenz. 5 Punkte: Alle Behauptungen sind durch ausreichende und qualitativ hochwertige Belege gestützt."
+      weight: 1.0
+    - name: "Berücksichtigung des Forschungsstandes"
+      description: "1 Punkt: Unterschiedliche wissenschaftliche Positionen werden ignoriert oder falsch dargestellt. 2 Punkte: Unvollständige oder einseitige Darstellung des Forschungsstandes. 3 Punkte: Grundlegende Berücksichtigung verschiedener Positionen, aber unvollständig. 4 Punkte: Weitgehend ausgewogene Darstellung verschiedener wissenschaftlicher Positionen. 5 Punkte: Unterschiedliche wissenschaftliche Positionen und Kontroversen werden vollständig angemessen dargestellt."
+      weight: 1.0
+    - name: "Korrektheit von Visualisierungen"
+      description: "1 Punkt: Diagramme und Grafiken sind sachlich falsch oder stark irreführend. 2 Punkte: Mehrere Fehler oder irreführende Elemente in Visualisierungen. 3 Punkte: Überwiegend korrekte Visualisierungen mit gelegentlichen Ungenauigkeiten. 4 Punkte: Weitgehend sachlich richtige und angemessene Visualisierungen. 5 Punkte: Alle Diagramme, Grafiken und Abbildungen sind sachlich vollständig richtig und nicht irreführend."
+      weight: 1.0
+    - name: "Vermeidung von Fehlinformationen"
+      description: "1 Punkt: Enthält bekannte Mythen, Falschinformationen oder überholte Theorien. 2 Punkte: Mehrere problematische Inhalte oder veraltete Informationen. 3 Punkte: Überwiegend korrekt, aber gelegentliche problematische Elemente. 4 Punkte: Weitgehend frei von Fehlinformationen und Mythen. 5 Punkte: Vollständig frei von bekannten Mythen, Falschinformationen oder überholten Theorien."
+      weight: 1.5
+    - name: "Konsistenz mit Lehrplänen"
+      description: "1 Punkt: Inhalte widersprechen gültigen Bildungsstandards und Curricula. 2 Punkte: Erhebliche Abweichungen von Bildungsstandards und Lehrplänen. 3 Punkte: Grundsätzlich kompatibel, aber einige Abweichungen von Standards. 4 Punkte: Weitgehend konsistent mit gültigen Bildungsstandards. 5 Punkte: Inhalte stimmen vollständig mit gültigen Bildungsstandards und Curricula überein."
+      weight: 1.0
+    - name: "Interdisziplinäre Kohärenz"
+      description: "1 Punkt: Inhalte widersprechen Erkenntnissen aus verwandten Fachbereichen. 2 Punkte: Mehrere Inkonsistenzen mit anderen Fachbereichen. 3 Punkte: Grundsätzlich kompatibel, aber gelegentliche Widersprüche. 4 Punkte: Weitgehend kohärent mit verwandten Fachbereichen. 5 Punkte: Inhalte sind vollständig kompatibel mit Erkenntnissen aus verwandten Fachbereichen."
+      weight: 1.0
+    - name: "Reproduzierbarkeit"
+      description: "1 Punkt: Dargestellte Experimente oder Untersuchungen sind nicht reproduzierbar. 2 Punkte: Erhebliche Probleme bei der Reproduzierbarkeit beschriebener Verfahren. 3 Punkte: Grundsätzlich reproduzierbar, aber einige Unklarheiten. 4 Punkte: Weitgehend reproduzierbare Darstellung von Experimenten und Untersuchungen. 5 Punkte: Alle dargestellten Experimente oder Untersuchungen können bei korrekter Durchführung vollständig reproduziert werden."
+      weight: 1.0
+    - name: "Ethische Korrektheit"
+      description: "1 Punkt: Inhalte verstoßen gegen wissenschaftliche oder gesellschaftliche Ethikstandards. 2 Punkte: Mehrere ethisch problematische Aspekte oder Darstellungen. 3 Punkte: Grundsätzlich ethisch vertretbar, aber gelegentliche problematische Elemente. 4 Punkte: Weitgehend ethisch korrekt und angemessen. 5 Punkte: Inhalte entsprechen vollständig wissenschaftlichen und gesellschaftlichen Ethikstandards."
+      weight: 1.0
