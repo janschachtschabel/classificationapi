@@ -91,6 +91,5 @@ docker-compose*
 .dockerignore
 
 # Development files
-README.md
 LICENSE
 mkdocs.yml
