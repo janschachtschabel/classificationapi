@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "runtime": "python3.11"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api/index.py"
+    }
+  ],
+  "env": {
+    "OPENAI_DEFAULT_MODEL": "gpt-4o-mini",
+    "API_HOST": "0.0.0.0",
+    "LOG_LEVEL": "INFO",
+    "LOG_FORMAT": "json"
+  },
+  "functions": {
+    "src/main.py": {
+      "maxDuration": 60
+    }
+  }
+}
