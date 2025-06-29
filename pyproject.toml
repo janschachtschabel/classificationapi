@@ -8,22 +8,22 @@ version = "0.1.0"
 description = "API for zero-shot classification of educational metadata with SKOS vocabularies and resource suggestions"
 authors = [{name = "Jan Schachtschabel", email = "jan.schachtschabel@example.com"}]
 readme = "README.md"
-requires-python = ">=3.12.0"
+requires-python = ">=3.13.0"
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "Intended Audience :: Education",
     "License :: OSI Approved :: Apache Software License",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Education",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
     "fastapi>=0.110.0",
     "uvicorn[standard]>=0.29.0",
-    "pydantic>=2.0.0",
-    "pydantic-settings>=2.0.0",
+    "pydantic>=2.11.0",
+    "pydantic-settings>=2.10.0",
     "openai>=1.0.0",
     "loguru>=0.7.0",
     "httpx>=0.27.0",
@@ -55,7 +55,7 @@ Repository = "https://github.com/janschachtschabel/classificationapi.git"
 Issues = "https://github.com/janschachtschabel/classificationapi/issues"
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py313"
 line-length = 120
 
 [tool.ruff.lint]
@@ -79,7 +79,7 @@ ignore = [
 "tests/*" = ["B011"]
 
 [tool.mypy]
-python_version = "3.12"
+python_version = "3.13"
 check_untyped_defs = true
 disallow_any_generics = true
 disallow_incomplete_defs = true
