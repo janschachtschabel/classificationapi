@@ -1,0 +1,43 @@
+services:
+  - name: metadata-classification-api
+    type: web
+    build:
+      type: docker
+      dockerfile: Dockerfile.pip
+    instance_type: nano
+    regions:
+      - fra
+    ports:
+      - port: 8000
+        protocol: http
+    env:
+      - key: OPENAI_API_KEY
+        scope: project
+      - key: OPENAI_DEFAULT_MODEL
+        value: gpt-4o-mini
+      - key: API_HOST
+        value: 0.0.0.0
+      - key: API_PORT
+        value: 8000
+      - key: LOG_LEVEL
+        value: INFO
+      - key: LOG_FORMAT
+        value: json
+      - key: CACHE_TTL_SECONDS
+        value: 3600
+      - key: CACHE_MAX_SIZE
+        value: 1000
+      - key: RATE_LIMIT_REQUESTS_PER_MINUTE
+        value: 60
+      - key: HTTP_TIMEOUT_SECONDS
+        value: 30
+      - key: OPENAI_TIMEOUT_SECONDS
+        value: 60
+    health_check:
+      http:
+        path: /health
+        port: 8000
+      initial_delay_seconds: 30
+      period_seconds: 10
+      timeout_seconds: 5
+      failure_threshold: 3
