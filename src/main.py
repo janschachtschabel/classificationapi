@@ -52,53 +52,53 @@ def create_app() -> FastAPI:
         title="Metadata Classification API",
         description="""
         ## 🎯 Overview
-        
+
         The **Metadata Classification API** provides intelligent text analysis and classification services for educational content.
-        
+
         ### 🚀 Key Features
-        
+
         - **Text Classification**: Classify text using SKOS vocabularies or custom categories
         - **Quality Scoring**: Evaluate text quality with predefined or custom metrics
         - **Metadata Generation**: Generate descriptive fields and resource suggestions
         - **Batch Processing**: Process multiple texts efficiently
-        
+
         ### 📋 Available Endpoints
-        
+
         - **`POST /classify`**: Classify text and generate metadata
         - **`POST /scoring/evaluate`**: Evaluate text quality with detailed scoring
         - **`GET /scoring/metrics`**: List available predefined metrics
         - **`GET /health`**: Check API health and dependencies
-        
+
         ### 🔧 Quick Start
-        
+
         1. **Classify Text**:
         ```bash
         curl -X POST "http://localhost:8000/classify" \
              -H "Content-Type: application/json" \
              -d '{"text": "Machine learning in education", "mode": "skos"}'
         ```
-        
+
         2. **Score Text Quality**:
         ```bash
         curl -X POST "http://localhost:8000/scoring/evaluate" \
              -H "Content-Type: application/json" \
              -d '{"text": "Educational content example", "predefined_metrics": ["sachrichtigkeit"]}'
         ```
-        
+
         ### 📚 Documentation
-        
+
         - **Interactive Testing**: Use this Swagger UI to test endpoints
         - **Alternative View**: Visit `/redoc` for a clean, readable API reference
         - **Complete Guide**: Full documentation with examples and deployment guides available separately
-        
+
         ### ⚙️ Configuration
-        
+
         - **OpenAI API Key**: Required for AI-powered classification and scoring
         - **Environment Variables**: Configure via `.env` file or environment variables
         - **Rate Limits**: Inherits OpenAI's rate limiting policies
-        
+
         ### 🔒 Authentication
-        
+
         Currently uses OpenAI API key authentication. Configure your key in environment variables:
         ```bash
         export OPENAI_API_KEY="your-api-key-here"
@@ -108,12 +108,9 @@ def create_app() -> FastAPI:
         contact={
             "name": "Classification API Team",
             "url": "https://github.com/your-org/classification-api",
-            "email": "support@example.com"
+            "email": "support@example.com",
         },
-        license_info={
-            "name": "MIT License",
-            "url": "https://opensource.org/licenses/MIT"
-        },
+        license_info={"name": "MIT License", "url": "https://opensource.org/licenses/MIT"},
         docs_url="/docs",
         redoc_url="/redoc",
         openapi_url="/openapi.json",

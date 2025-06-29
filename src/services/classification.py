@@ -53,7 +53,9 @@ class ClassificationService:
     def __init__(self) -> None:
         """Initialize the classification service."""
         self.openai_client = AsyncOpenAI(api_key=settings.openai_api_key, timeout=settings.openai_timeout_seconds)
-        self.vocabulary_cache: TTLCache[str, dict[str, Any]] = TTLCache(maxsize=settings.cache_max_size, ttl=settings.cache_ttl_seconds)
+        self.vocabulary_cache: TTLCache[str, dict[str, Any]] = TTLCache(
+            maxsize=settings.cache_max_size, ttl=settings.cache_ttl_seconds
+        )
         self.http_client = httpx.AsyncClient(timeout=settings.http_timeout_seconds)
 
         # Cross-encoder for semantic similarity
@@ -298,9 +300,9 @@ class ClassificationService:
                 # Get similarity scores
                 scores = self.cross_encoder.predict(pairs)  # type: ignore[operator]
                 # Convert to list if it's a tensor/array
-                if hasattr(scores, 'tolist'):
+                if hasattr(scores, "tolist"):
                     scores = scores.tolist()
-                elif hasattr(scores, '__iter__'):
+                elif hasattr(scores, "__iter__"):
                     scores = list(scores)
 
                 # Get top-k most relevant concepts

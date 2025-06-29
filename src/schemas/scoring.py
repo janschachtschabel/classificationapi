@@ -3,7 +3,7 @@ Pydantic schemas for text scoring and evaluation functionality.
 """
 
 from enum import Enum
-from typing import Any, Literal, cast
+from typing import Any
 
 from pydantic import BaseModel, Field, model_validator
 
@@ -121,7 +121,8 @@ class ScoringRequest(BaseModel):
         if self.custom_metrics:
             # Use list comprehension to filter out dummy metrics
             valid_custom_metrics = [
-                metric for metric in self.custom_metrics
+                metric
+                for metric in self.custom_metrics
                 if not (
                     metric.name == "string"
                     and metric.description == "string"

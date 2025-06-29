@@ -17,22 +17,22 @@ router = APIRouter(tags=["health"])
     summary="API Health Check and Status Monitoring",
     description="""
     **Monitor the health and availability of the Metadata Classification API.**
-    
+
     ## 🟢 What This Endpoint Provides
-    
+
     - **Service Status**: Overall API health (healthy/unhealthy)
     - **Version Information**: Current API version for compatibility checks
     - **Timestamp**: Current server time in UTC
     - **Uptime Monitoring**: How long the service has been running
-    
+
     ## 🔍 Use Cases
-    
+
     ### **Load Balancer Health Checks**
     ```bash
     # Check if service is ready to receive traffic
     curl -f http://localhost:8000/health
     ```
-    
+
     ### **Monitoring & Alerting**
     ```bash
     # Automated monitoring scripts
@@ -42,15 +42,15 @@ router = APIRouter(tags=["health"])
         echo "API needs attention"
     fi
     ```
-    
+
     ### **Deployment Verification**
     ```bash
     # Verify deployment after updates
     curl http://localhost:8000/health | jq '.version'
     ```
-    
+
     ## 📋 Response Format
-    
+
     **Healthy Response (200 OK)**:
     ```json
     {
@@ -60,7 +60,7 @@ router = APIRouter(tags=["health"])
         "uptime": 3600.5
     }
     ```
-    
+
     **Unhealthy Response (503 Service Unavailable)**:
     ```json
     {
@@ -70,16 +70,16 @@ router = APIRouter(tags=["health"])
         "error": "OpenAI API connection failed"
     }
     ```
-    
+
     ## ⚙️ Integration Notes
-    
+
     - **No Authentication Required**: Public endpoint for monitoring
     - **Fast Response**: Optimized for frequent health checks
     - **Standard HTTP Codes**: 200 for healthy, 503 for unhealthy
     - **JSON Format**: Machine-readable response for automation
-    
+
     ## 📊 Monitoring Best Practices
-    
+
     - **Check Frequency**: Every 30-60 seconds for load balancers
     - **Timeout**: Set 5-10 second timeout for health checks
     - **Alerting**: Alert on consecutive failures (3+ failures)

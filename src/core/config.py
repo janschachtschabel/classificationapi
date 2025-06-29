@@ -83,6 +83,4 @@ try:
 except Exception:
     # Fallback for testing or when environment variables are not set
     # Provide all required fields with test values
-    settings = Settings(
-        openai_api_key="test-key"
-    )
+    settings = Settings(openai_api_key="test-key")
