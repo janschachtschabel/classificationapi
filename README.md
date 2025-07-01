@@ -182,7 +182,34 @@ LOG_LEVEL=INFO
 
 See [Configuration Guide](docs/getting-started/configuration.md) for all options.
 
+## 🧪 Live Demo
+
+**🚀 Try it now in Google Colab** (no installation required):
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YSj4ZQhLQWUuOL48EvZjiQcZmwGpkiwR)
+
+Das Notebook enthält:
+- Vollständige API-Installation in Google Colab
+- Cloudflare Tunnel für öffentlichen Zugriff
+
 ## 📖 Usage
+
+## 🚀 API-Endpoints
+
+```
+# Klassifikation & Metadaten
+POST /classify             # Klassifikation, Metadaten-Generierung, Ressourcen-Vorschläge
+
+# Textqualität & Scoring
+POST /scoring/evaluate     # Textqualität bewerten (Sachrichtigkeit, Neutralität, u.a.)
+GET  /scoring/metrics      # Verfügbare Bewertungsmetriken abrufen
+
+# System
+GET  /health               # Service-Status
+GET  /docs                 # Interaktive API-Dokumentation (Swagger UI)
+GET  /redoc                # Alternative API-Dokumentation (ReDoc)
+```
+
 
 ### 🔗 API Endpoints
 
